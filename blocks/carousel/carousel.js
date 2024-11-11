@@ -4,7 +4,7 @@ const placeholders = await fetchPlaceholders(getMetadata("locale"));
 const { btnNxt,btnPre} = placeholders;
 export default function decorate(block) {
 
-  console.log("placeholders ---> ",placeholders,btnNxt,btnPre);
+  //console.log("placeholders ---> ",placeholders,btnNxt,btnPre);
     const rows= [...block.children];
     [...block.children].forEach((row,r) => {
       if(r==0){
@@ -18,8 +18,7 @@ export default function decorate(block) {
       }else if(r==rows.length-1){
           const prebtn = document.createElement('button');
           prebtn.classList.add('btn');
-          prebtn.classList.add('btn-next
-          ');
+          prebtn.classList.add('btn-next');
           //const node = document.createTextNode(btnPre);
           const node = document.createTextNode(row.textContent);
           prebtn.append(node);
